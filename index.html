@@ -403,6 +403,15 @@ nav{display:flex;align-items:center;justify-content:space-between;}
 .stat-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:21px;font-weight:600;color:var(--ink);}
 .stat-card h4{font-size:14px;color:var(--ink-muted);font-weight:500;}
 
+/* ============ PROOF OF TRANSACTIONS ============ */
+.grid-proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;}
+.proof-card{padding:24px 22px;text-align:left;transition:transform .4s var(--ease), border-color .4s, box-shadow .4s;}
+.proof-card:hover{transform:translateY(-5px);border-color:rgba(43,184,244,.4);box-shadow:var(--shadow-blue);}
+.proof-method{display:block;font-size:10.5px;letter-spacing:.1em;color:var(--ink-faint);margin-bottom:12px;}
+.proof-amount{font-family:'IBM Plex Mono',monospace;font-size:23px;font-weight:600;margin-bottom:12px;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.proof-status{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:var(--green);}
+.proof-status svg{width:14px;height:14px;}
+
 /* ============ TESTIMONIALS ============ */
 .testi-card{padding:30px 28px;display:flex;flex-direction:column;gap:18px;transition:transform .4s var(--ease), border-color .4s;}
 .testi-card:hover{transform:translateY(-5px);border-color:rgba(212,165,55,.35);}
@@ -795,6 +804,44 @@ footer{
           <div class="stat-num" data-count="99" data-suffix="%">0</div>
         </div>
         <h4>Reliable Service</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROOF OF TRANSACTIONS ============ -->
+<section id="proof">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Real Transfers</span>
+      <h2>Proof of Transactions</h2>
+      <p>A snapshot of recent transfers processed through our network. Client names, phone numbers, and account details are never published.</p>
+    </div>
+    <div class="grid-proof">
+      <div class="proof-card glass reveal">
+        <span class="proof-method mono">MOBILE MONEY · CASH-IN</span>
+        <div class="proof-amount">GHS 1,460.00</div>
+        <span class="proof-status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>Successful</span>
+      </div>
+      <div class="proof-card glass reveal">
+        <span class="proof-method mono">MOBILE MONEY · TRANSFER</span>
+        <div class="proof-amount">XAF 5,200</div>
+        <span class="proof-status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>Successful</span>
+      </div>
+      <div class="proof-card glass reveal">
+        <span class="proof-method mono">ACCESS BANK · INTER-BANK</span>
+        <div class="proof-amount">₦2,035,800</div>
+        <span class="proof-status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>Successful</span>
+      </div>
+      <div class="proof-card glass reveal">
+        <span class="proof-method mono">OPAY · TRANSFER</span>
+        <div class="proof-amount">₦500,000</div>
+        <span class="proof-status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>Successful</span>
+      </div>
+      <div class="proof-card glass reveal">
+        <span class="proof-method mono">MOBILE MONEY · TRANSFER</span>
+        <div class="proof-amount">XAF 116,000</div>
+        <span class="proof-status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>Successful</span>
       </div>
     </div>
   </div>
