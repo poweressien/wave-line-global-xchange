@@ -355,8 +355,48 @@ nav{display:flex;align-items:center;justify-content:space-between;}
 .country-col.recv .country-chip:hover{border-color:rgba(43,184,244,.5);transform:translateY(-2px);box-shadow:var(--shadow-blue);}
 
 /* ============ WHY CHOOSE US ============ */
+/* ============ CURRENCY GALLERY ============ */
+.bw-toggle{
+  display:flex;align-items:center;gap:9px;margin:0 auto 40px;padding:12px 22px;
+  border-radius:100px;background:var(--glass);border:1px solid var(--glass-border);
+  font-size:13.5px;font-weight:500;color:var(--ink);transition:border-color .3s, transform .3s var(--ease);
+}
+.bw-toggle:hover{border-color:rgba(111,232,255,.5);transform:translateY(-2px);}
+.bw-toggle svg{width:17px;height:17px;color:var(--cyan);flex-shrink:0;}
+
+.note-gallery{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;
+  transition:filter .6s var(--ease);
+}
+.note-gallery.grayscale-mode{filter:grayscale(1) contrast(1.05);}
+
+.note-card{
+  position:relative;aspect-ratio:1.65/1;border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:space-between;padding:16px 18px;
+  border:1px solid rgba(255,255,255,.1);
+  background-image:repeating-linear-gradient(45deg, rgba(255,255,255,.04) 0 2px, transparent 2px 14px);
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.note-card::before{
+  content:'';position:absolute;inset:6px;border:1px dashed rgba(255,255,255,.14);border-radius:9px;pointer-events:none;
+}
+.note-card.nc-gold{background-color:#241a08;background-image:linear-gradient(135deg, rgba(212,165,55,.28), rgba(140,100,24,.12)), repeating-linear-gradient(45deg, rgba(255,255,255,.04) 0 2px, transparent 2px 14px);}
+.note-card.nc-blue{background-color:#081626;background-image:linear-gradient(135deg, rgba(43,184,244,.26), rgba(20,85,214,.14)), repeating-linear-gradient(45deg, rgba(255,255,255,.04) 0 2px, transparent 2px 14px);}
+.note-card:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 16px 40px -16px rgba(0,0,0,.5);}
+.note-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.65);}
+.note-top .mono{font-size:10px;}
+.note-code{
+  font-family:'Sora',sans-serif;font-weight:800;font-size:26px;letter-spacing:.03em;
+  text-align:center;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.3);
+}
+.note-bottom{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;color:rgba(255,255,255,.75);}
+.note-bottom span:last-child{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;color:#fff;}
+
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
 @media (max-width:980px){.grid-4{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:480px){
+  .note-gallery{grid-template-columns:repeat(2,1fr);}
+}
 @media (max-width:560px){.grid-4{grid-template-columns:1fr;}}
 
 .why-card{
@@ -690,6 +730,39 @@ footer{
           <a class="country-chip" href="https://wa.me/2347051980716?text=Hi%2C%20I%20want%20to%20receive%20a%20payment%20from%20Germany" target="_blank" rel="noopener">🇩🇪 Germany</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CURRENCY GALLERY ============ -->
+<section id="currencies">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">One Platform, Many Currencies</span>
+      <h2>Currencies We Move</h2>
+      <p>Every currency on our network, styled as a card. Tap the button to flip the whole gallery to black &amp; white.</p>
+    </div>
+
+    <button class="bw-toggle reveal" id="bwToggle" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 000 18z" fill="currentColor" stroke="none"/></svg>
+      <span id="bwToggleLabel">View in Black &amp; White</span>
+    </button>
+
+    <div class="note-gallery reveal" id="noteGallery">
+      <div class="note-card nc-gold"><div class="note-top"><span class="mono">WLX</span><span>🇳🇬</span></div><div class="note-code">NGN</div><div class="note-bottom"><span>Nigeria</span><span>₦</span></div></div>
+      <div class="note-card nc-blue"><div class="note-top"><span class="mono">WLX</span><span>🇨🇲</span></div><div class="note-code">XAF</div><div class="note-bottom"><span>Cameroon</span><span>Fr</span></div></div>
+      <div class="note-card nc-gold"><div class="note-top"><span class="mono">WLX</span><span>🇿🇲</span></div><div class="note-code">ZMW</div><div class="note-bottom"><span>Zambia</span><span>K</span></div></div>
+      <div class="note-card nc-blue"><div class="note-top"><span class="mono">WLX</span><span>🇿🇦</span></div><div class="note-code">ZAR</div><div class="note-bottom"><span>South Africa</span><span>R</span></div></div>
+      <div class="note-card nc-gold"><div class="note-top"><span class="mono">WLX</span><span>🇰🇪</span></div><div class="note-code">KES</div><div class="note-bottom"><span>Kenya</span><span>Sh</span></div></div>
+      <div class="note-card nc-blue"><div class="note-top"><span class="mono">WLX</span><span>🇧🇯</span></div><div class="note-code">XOF</div><div class="note-bottom"><span>Benin Republic</span><span>Fr</span></div></div>
+      <div class="note-card nc-gold"><div class="note-top"><span class="mono">WLX</span><span>🇬🇭</span></div><div class="note-code">GHS</div><div class="note-bottom"><span>Ghana</span><span>₵</span></div></div>
+      <div class="note-card nc-blue"><div class="note-top"><span class="mono">WLX</span><span>🇺🇸</span></div><div class="note-code">USD</div><div class="note-bottom"><span>USA</span><span>$</span></div></div>
+      <div class="note-card nc-gold"><div class="note-top"><span class="mono">WLX</span><span>🇬🇧</span></div><div class="note-code">GBP</div><div class="note-bottom"><span>United Kingdom</span><span>£</span></div></div>
+      <div class="note-card nc-blue"><div class="note-top"><span class="mono">WLX</span><span>🇨🇳</span></div><div class="note-code">CNY</div><div class="note-bottom"><span>China</span><span>¥</span></div></div>
+      <div class="note-card nc-gold"><div class="note-top"><span class="mono">WLX</span><span>🇨🇦</span></div><div class="note-code">CAD</div><div class="note-bottom"><span>Canada</span><span>$</span></div></div>
+      <div class="note-card nc-blue"><div class="note-top"><span class="mono">WLX</span><span>🇩🇿</span></div><div class="note-code">DZD</div><div class="note-bottom"><span>Algeria</span><span>د.ج</span></div></div>
+      <div class="note-card nc-gold"><div class="note-top"><span class="mono">WLX</span><span>🇦🇺</span></div><div class="note-code">AUD</div><div class="note-bottom"><span>Australia</span><span>$</span></div></div>
+      <div class="note-card nc-blue"><div class="note-top"><span class="mono">WLX</span><span>🇩🇪</span></div><div class="note-code">EUR</div><div class="note-bottom"><span>Germany</span><span>€</span></div></div>
     </div>
   </div>
 </section>
@@ -1147,6 +1220,17 @@ const statIO = new IntersectionObserver(entries => {
   });
 }, {threshold:.4});
 statCards.forEach(c => statIO.observe(c));
+
+/* ===== currency gallery b&w toggle ===== */
+const bwToggle = document.getElementById('bwToggle');
+const noteGallery = document.getElementById('noteGallery');
+const bwToggleLabel = document.getElementById('bwToggleLabel');
+let isBW = false;
+bwToggle.addEventListener('click', () => {
+  isBW = !isBW;
+  noteGallery.classList.toggle('grayscale-mode', isBW);
+  bwToggleLabel.textContent = isBW ? 'View in Color' : 'View in Black & White';
+});
 
 /* ===== contact form (front-end only — wire to your backend) ===== */
 document.getElementById('contactForm').addEventListener('submit', function(e){
